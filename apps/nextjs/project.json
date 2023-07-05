@@ -5,11 +5,12 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/next:build",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
-        "root": "apps/nextjs",
         "postcssConfig": "apps/{your app here}/postcss.config.js",
         "outputPath": "dist/apps/nextjs"
       },
@@ -21,7 +22,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/next:server",
+      "executor": "@nx/next:server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "nextjs:build",
@@ -40,14 +41,16 @@
       }
     },
     "export": {
-      "executor": "@nrwl/next:export",
+      "executor": "@nx/next:export",
       "options": {
         "buildTarget": "nextjs:build:production"
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/nextjs/jest.config.ts",
         "passWithNoTests": true
@@ -60,10 +63,14 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/nextjs/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/nextjs/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     }
   },

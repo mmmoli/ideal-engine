@@ -1,10 +1,10 @@
 //@ts-check
 import '../../libs/env-validator/src/lib/env.mjs';
 
-import { withNx } from '@nrwl/next/plugins/with-nx.js';
+import { withNx } from '@nx/next/plugins/with-nx.js';
 
 /**
- * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
+ * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
   reactStrictMode: true,
